@@ -7,6 +7,7 @@
 double pv(double fv, double r, double t){
 	return (fv / pow( (1 + r), t));	
 }
+
 double fv(double pv, double r, double t){
 	return (pv * pow( (1 + r), t));
 }
@@ -15,12 +16,12 @@ void mortage_print(double loan, double rate, int term){
 	return;
 }
 
-double mean_geo(int years, double *arr){
-	double sum = 1;	
+double mean_geo(double years, double *arr){
+	double sum = 1;
 	for (int i = 0; i < years; i++){
 		sum *= (1 + arr[i]);
 	}
-	return pow(sum, 1/years) - 1;
+	return ((pow(sum, 1 / years)) - 1);
 }
 
 double mean_arith(int years, double *arr){
@@ -28,7 +29,7 @@ double mean_arith(int years, double *arr){
 	for (int i = 0; i < years; i++){
 		sum += arr[i];
 	}
-	return sum/ years;
+	return sum / years;
 }
 
 double return_expected(double *p, double *r, int size){
